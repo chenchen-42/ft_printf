@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 15:49:48 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/18 17:49:50 by andmigue         ###   ########.fr       */
+/*   Created: 2026/05/18 16:12:40 by andmigue          #+#    #+#             */
+/*   Updated: 2026/05/18 17:46:38 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int ft_printf(const char *s, ...)
-{
-	va_list args;
-	int i;
-	
-	i = 0;
-	va_start (args, s);
-	while (s[i])
-	{
-		if(s[i] == '%')
-		{
-			i++;
-			if(s[i] == 'c')
-				ft_putchar(va_arg(args, int));
-			if(s[i] == 's')
-				ft_putstr(va_arg(args, char *));
-		}
-		i++;
-	}
-	va_end(args);
-	return(0);
-}
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <ctype.h>
+# include <stdint.h>
+# include <stdarg.h>
 
-int main(void)
-{
-	char *s = "test";
-	printf("%s\n", s);
-	ft_printf("%s", s);
-	
-}
+int ft_printf(const char *s, ...);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+
+#endif

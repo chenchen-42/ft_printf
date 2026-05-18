@@ -6,7 +6,7 @@
 #    By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 15:50:06 by andmigue          #+#    #+#              #
-#    Updated: 2026/05/18 15:50:39 by andmigue         ###   ########.fr        #
+#    Updated: 2026/05/18 17:48:00 by andmigue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRC = 
+SRC = ft_putchar.c ft_printf.c
 
 OBJS = $(SRC:.c=.o)
 

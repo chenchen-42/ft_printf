@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 15:49:48 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/18 17:49:50 by andmigue         ###   ########.fr       */
+/*   Created: 2026/05/18 16:40:34 by andmigue          #+#    #+#             */
+/*   Updated: 2026/05/18 17:46:45 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *s, ...)
+void	ft_putchar(char c)
 {
-	va_list args;
-	int i;
-	
-	i = 0;
-	va_start (args, s);
-	while (s[i])
-	{
-		if(s[i] == '%')
-		{
-			i++;
-			if(s[i] == 'c')
-				ft_putchar(va_arg(args, int));
-			if(s[i] == 's')
-				ft_putstr(va_arg(args, char *));
-		}
-		i++;
-	}
-	va_end(args);
-	return(0);
+	write(1, &c, 1);
 }
 
-int main(void)
+void	ft_putstr(char *s)
 {
-	char *s = "test";
-	printf("%s\n", s);
-	ft_printf("%s", s);
-	
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
 }
