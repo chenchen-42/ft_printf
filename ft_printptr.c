@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 16:12:40 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/20 18:20:19 by andmigue         ###   ########.fr       */
+/*   Created: 2026/05/20 17:45:06 by andmigue          #+#    #+#             */
+/*   Updated: 2026/05/20 18:20:15 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	ft_printptr(unsigned long n)
+{
+	char	*low;
 
-int		ft_printf(const char *s, ...);
-int		ft_putchar(char c);
-int		ft_putnbr(long n);
-int		ft_putstr(char *s);
-int		ft_putnbr_un(unsigned long n);
-int		ft_printhex(unsigned long n, char *base);
-void	ft_putpercent(char c);
-int		ft_printptr(unsigned long n);
-
-#endif
+	low = "0123456789abcdef";
+	if (!n)
+		return (ft_putstr("(nil)"));
+	ft_putstr("0x");
+	return (2 + ft_printhex(n, low));
+}

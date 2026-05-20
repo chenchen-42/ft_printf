@@ -6,7 +6,7 @@
 #    By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 15:50:06 by andmigue          #+#    #+#              #
-#    Updated: 2026/05/18 17:48:00 by andmigue         ###   ########.fr        #
+#    Updated: 2026/05/20 17:45:46 by andmigue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRC = ft_putchar.c ft_printf.c
+SRC = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c\
+	ft_putnbr_un.c ft_printhex.c ft_putpercent.c\
+	ft_printptr.c\
 
 OBJS = $(SRC:.c=.o)
 

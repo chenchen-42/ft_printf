@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 16:12:40 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/20 18:20:19 by andmigue         ###   ########.fr       */
+/*   Created: 2026/05/20 17:27:25 by andmigue          #+#    #+#             */
+/*   Updated: 2026/05/20 17:46:23 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	ft_putstr(char *s)
+{
+	int	i;
 
-int		ft_printf(const char *s, ...);
-int		ft_putchar(char c);
-int		ft_putnbr(long n);
-int		ft_putstr(char *s);
-int		ft_putnbr_un(unsigned long n);
-int		ft_printhex(unsigned long n, char *base);
-void	ft_putpercent(char c);
-int		ft_printptr(unsigned long n);
-
-#endif
+	i = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
+	while (s[i])
+		write(1, &s[i++], 1);
+	return (i);
+}
