@@ -6,13 +6,13 @@
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:49:48 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/24 11:13:57 by andmigue         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:44:13 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_specifier(char str, va_list args)
+static int	ft_specifier(char str, va_list *args)
 {
 	char	*low;
 	char	*up;
@@ -20,19 +20,19 @@ static int	ft_specifier(char str, va_list args)
 	low = "0123456789abcdef";
 	up = "0123456789ABCDEF";
 	if (str == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(*args, int)));
 	else if (str == 'd' || str == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (ft_putnbr(va_arg(*args, int)));
 	else if (str == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(*args, char *)));
 	else if (str == 'u')
-		return (ft_putnbr_un(va_arg(args, unsigned int)));
+		return (ft_putnbr_un(va_arg(*args, unsigned int)));
 	else if (str == 'x')
-		return (ft_printhex(va_arg(args, unsigned int), low));
+		return (ft_printhex(va_arg(*args, unsigned int), low));
 	else if (str == 'X')
-		return (ft_printhex(va_arg(args, unsigned int), up));
+		return (ft_printhex(va_arg(*args, unsigned int), up));
 	else if (str == 'p')
-		return (ft_printptr(va_arg(args, unsigned long)));
+		return (ft_printptr(va_arg(*args, unsigned long)));
 	else if (str == '%')
 		return (ft_putchar('%'));
 	return (0);
@@ -48,11 +48,7 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (*s == '%')
-		{
-			if (*(s + 1) == '\0')
-				break ;
-			count += ft_specifier(*(++s), args);
-		}
+			count += ft_specifier(*(++s), &args);
 		else
 			count += ft_putchar(*s);
 		s++;

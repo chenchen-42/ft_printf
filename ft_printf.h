@@ -6,7 +6,7 @@
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:12:40 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/24 11:14:01 by andmigue         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:48:29 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 int		ft_printf(const char *s, ...);
 int		ft_putchar(char c);
