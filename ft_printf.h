@@ -6,7 +6,7 @@
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:12:40 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/20 18:20:19 by andmigue         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:14:01 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		ft_putnbr(long n);
 int		ft_putstr(char *s);
 int		ft_putnbr_un(unsigned long n);
 int		ft_printhex(unsigned long n, char *base);
-void	ft_putpercent(char c);
 int		ft_printptr(unsigned long n);
 
 #endif

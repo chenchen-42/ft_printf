@@ -6,7 +6,7 @@
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:49:48 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/20 18:25:11 by andmigue         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:13:57 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (*s == '%')
+		{
+			if (*(s + 1) == '\0')
+				break ;
 			count += ft_specifier(*(++s), args);
+		}
 		else
 			count += ft_putchar(*s);
 		s++;
@@ -57,22 +61,22 @@ int	ft_printf(const char *s, ...)
 	return (count);
 }
 
-// #include <limits.h>
+/* #include <limits.h>
 
-// int	main(void)
-// {
-// 	ft_printf("char:     [%%%% c%%%s ]\n", "A");
-// 	ft_printf("string:   [%s]\n", "hello");
-// 	ft_printf("NULL str: [%s]\n", (char *)NULL);
-// 	ft_printf("int:      [%d]\n", 42);
-// 	ft_printf("negative: [%d]\n", -42);
-// 	ft_printf("INT_MAX:  [%d]\n", INT_MAX);
-// 	ft_printf("INT_MIN:  [%d]\n", INT_MIN);
-// 	ft_printf("unsigned: [%u]\n", UINT_MAX);
-// 	ft_printf("hex low:  [%x]\n", 255);
-// 	ft_printf("hex up:   [%X]\n", 255);
-// 	ft_printf("pointer:  [%p]\n", (void *)0xdeadbeef);
-// 	ft_printf("NULL ptr: [%p]\n", (void *)0);
-// 	ft_printf("percent:  [%%]\n");
-// 	return (0);
-// }
+int	main(void)
+{
+	ft_printf("char:     [%%%% c%%%s ]\n", "A");
+	ft_printf("string:   [%s]\n", "hello");
+	ft_printf("NULL str: [%s]\n", (char *)NULL);
+	ft_printf("int:      [%d]\n", 42);
+	ft_printf("negative: [%d]\n", -42);
+	ft_printf("INT_MAX:  [%d]\n", INT_MAX);
+	ft_printf("INT_MIN:  [%d]\n", INT_MIN);
+	ft_printf("unsigned: [%u]\n", UINT_MAX);
+	ft_printf("hex low:  [%x]\n", 255);
+ 	ft_printf("hex up:   [%X]\n", 255);
+ 	ft_printf("pointer:  [%p]\n", (void *)0xdeadbeef);
+ 	ft_printf("NULL ptr: [%p]\n", (void *)0);
+	ft_printf("percent:  [%%]\n");
+ 	return (0);
+} */
