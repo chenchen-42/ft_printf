@@ -6,7 +6,7 @@
 /*   By: andmigue <andmigue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:49:48 by andmigue          #+#    #+#             */
-/*   Updated: 2026/05/24 19:53:00 by andmigue         ###   ########.fr       */
+/*   Updated: 2026/05/24 19:58:42 by andmigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_printf(const char *s, ...)
 }
 
 /* #include <limits.h>
+#include <stdio.h>
 
 int	main(void)
 {
