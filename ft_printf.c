@@ -48,7 +48,11 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (*s == '%')
+		{
 			count += ft_specifier(*(++s), args);
+			if (*s == '\0')
+				return (va_end(args), -1);
+		}
 		else
 			count += ft_putchar(*s);
 		s++;
